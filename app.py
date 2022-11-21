@@ -1,6 +1,6 @@
 import random
 
-names = ["Elijah","Abiodun","Joshua","Timothy","Dayo","Daniel","Bamidele","Marvellous","James","Dotun", "Olaolu", "Afeez"]
+names = ["Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 pairing = []
 for i in range(int(len(names)/2)):
