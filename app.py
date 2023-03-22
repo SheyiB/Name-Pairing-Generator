@@ -20,8 +20,8 @@ def generatePairs():
         #Join generated pair and add it to list array
         pairing.append("Bro "+brother1 + " & " + "Bro "+brother2)
 
-print("The Pairings Are")
-
-#Print pairing
-for i in pairing:
-    print(i)
+def showPairs():
+    print("The Pairings Are")
+    #Print pairing
+    for i in pairing:
+        print(i)
