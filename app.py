@@ -13,7 +13,10 @@ class NamesPairGen:
 
 def generatePairs(names, pairLength):
     #Looping through the pairing len/2 times because pair is in 2
-    for i in range(int(len(names)/2)):
+    for i in range(int(len(names)/pairLength)):
+        currentPair = []
+        for x in range(i):
+            currentPair.append(random.choice(names))
         #Generate first random name
         brother1 = random.choice(names)
         #Remove generated name from list
