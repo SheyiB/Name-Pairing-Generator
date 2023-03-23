@@ -9,12 +9,23 @@ pairing = []
 
 
 class NamesPairGen:
-    def __init__(self, name_list = [], name_pairs = []):
+    def __init__(self, name_list = []):
         self.name_list = name_list
-        self.name_pairs = name_pairs
-        
-    
+        self.name_pairs = []
+        self.list_length = len(name_list)
 
+    def generate_pairs(self, length):
+        if(self.list_length% length != 0):
+            print("List not symetric, not all Groups will have equal numbers")
+
+        for x in range(self.name_list//length):
+            current_pair = []
+            for i in range(length):
+                name = random.choice(self.name_list)
+                current_pair.append(name)
+                self.name_list.remove(name)
+            self.name_pairs.append(current_pair)
+    
 def generatePairs(names, pairLength):
     #Looping through the pairing len/2 times because pair is in 2
     for i in range(int(len(names)/pairLength)):
