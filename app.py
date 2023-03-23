@@ -18,7 +18,7 @@ class NamesPairGen:
         if(self.list_length% length != 0):
             print("List not symetric, not all Groups will have equal numbers")
 
-        for x in range(self.name_list//length):
+        for x in range(len(self.name_list)//length):
             current_pair = []
             for i in range(length):
                 name = random.choice(self.name_list)
@@ -54,3 +54,8 @@ def showPairs():
     #Print pairing
     for i in pairing:
         print(i)
+
+
+churchBrothers = NamesPairGen(names)
+
+churchBrothers.generate_pairs(2)
