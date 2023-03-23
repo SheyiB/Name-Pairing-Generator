@@ -28,10 +28,10 @@ class NamesPairGen:
 
     def show_pairs(self):
         for x in range(len(self.name_pairs)):
-            print("\n Group ", x+1)
+            print("Group ", x+1)
             for y in self.name_pairs[x]:
                 print(y, end= ' ')
-    
+            print(" ")
 def generatePairs(names, pairLength):
     #Looping through the pairing len/2 times because pair is in 2
     for i in range(int(len(names)/pairLength)):
