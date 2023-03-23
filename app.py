@@ -6,9 +6,13 @@ names = ["Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James
 #Pairing list
 pairing = []
 
+
+
 class NamesPairGen:
-    def __init__(self):
-        pass
+    def __init__(self, name_list = [], name_pairs = []):
+        self.name_list = name_list
+        self.name_pairs = name_pairs
+        
     
 
 def generatePairs(names, pairLength):
