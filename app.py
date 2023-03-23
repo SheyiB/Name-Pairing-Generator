@@ -25,6 +25,12 @@ class NamesPairGen:
                 current_pair.append(name)
                 self.name_list.remove(name)
             self.name_pairs.append(current_pair)
+
+    def show_pairs(self):
+        for x in range(len(self.name_pairs)):
+            print("Group ", x+1)
+            for y in self.name_pairs[x]:
+                print(y)
     
 def generatePairs(names, pairLength):
     #Looping through the pairing len/2 times because pair is in 2
