@@ -28,9 +28,9 @@ class NamesPairGen:
 
     def show_pairs(self):
         for x in range(len(self.name_pairs)):
-            print("Group ", x+1)
+            print("\n Group ", x+1)
             for y in self.name_pairs[x]:
-                print(y)
+                print(y, end= ' ')
     
 def generatePairs(names, pairLength):
     #Looping through the pairing len/2 times because pair is in 2
@@ -59,3 +59,5 @@ def showPairs():
 churchBrothers = NamesPairGen(names)
 
 churchBrothers.generate_pairs(2)
+
+churchBrothers.show_pairs()
