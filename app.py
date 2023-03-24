@@ -49,7 +49,6 @@ class NamesPairGen:
             self.name_pairs.append(current_pair)
         
         if(self.symetric):
-            print("We here")
             for y in range(len(self.name_list)):
                 name = random.choice(self.name_list)
                 self.name_pairs[y].append(name)
