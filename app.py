@@ -1,7 +1,7 @@
 import random
 
 #names of people to be paired
-names = ["Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
+names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 #Pairing list
 pairing = []
@@ -34,10 +34,11 @@ class NamesPairGen:
         self.name_list = name_list
         self.name_pairs = []
         self.list_length = len(name_list)
+        self.symetric = False
 
     def generate_pairs(self, length):
-        if(self.list_length% length != 0):
-            print("List not symetric, not all Groups will have equal numbers")
+        if(self.list_length % length != 0):
+            self.symetric = True
 
         for x in range(len(self.name_list)//length):
             current_pair = []
@@ -46,6 +47,15 @@ class NamesPairGen:
                 current_pair.append(name)
                 self.name_list.remove(name)
             self.name_pairs.append(current_pair)
+        
+        if(self.symetric):
+            print("We here")
+            for y in range(len(self.name_list)):
+                name = random.choice(self.name_list)
+                self.name_pairs[y].append(name)
+                self.name_list.remove(name)
+            # print("List not symetric, not all Groups will have equal numbers")
+
 
     def show_pairs(self):
         for x in range(len(self.name_pairs)):
