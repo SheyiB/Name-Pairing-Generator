@@ -1,6 +1,12 @@
 import random
+import csv
+import sys
 
 #names of people to be paired
+with open(sys.argv[1], newline='') as csvfile:
+    list_of_names = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    for row in list_of_names:
+        print(', '.join(row))
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 #Pairing list
