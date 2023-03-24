@@ -66,10 +66,18 @@ class NamesPairGen:
 
     def show_pairs(self):
         for x in range(len(self.name_pairs)):
-            print("Group ", x+1)
+            #print("Group ", x+1)
+            with open('result.csv', 'a', newline='') as csvfile:
+                result = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                result.writerow(['Group', x+1])
             for y in self.name_pairs[x]:
-                print(y, end= ' ')
-            print(" ")
+               # print(y, end= ' ')
+                with open('result.csv', 'a', newline='') as csvfile:
+                    result = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    result.writerow(y)
+                    result.writerow('\n')
+
+            #print(" ")
 
 churchBrothers = NamesPairGen(bch_students)
 
