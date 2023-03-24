@@ -3,10 +3,12 @@ import csv
 import sys
 
 #names of people to be paired
+bch_students = []
 with open(sys.argv[1], newline='') as csvfile:
-    list_of_names = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    list_of_names = csv.reader(csvfile, quotechar='|')
     for row in list_of_names:
-        print(', '.join(row))
+        #print(', '.join(row))
+        bch_students.append(row)
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 #Pairing list
@@ -69,8 +71,8 @@ class NamesPairGen:
                 print(y, end= ' ')
             print(" ")
 
-churchBrothers = NamesPairGen(names)
+churchBrothers = NamesPairGen(bch_students)
 
-churchBrothers.generate_pairs(4)
+churchBrothers.generate_pairs(10)
 
 churchBrothers.show_pairs()
