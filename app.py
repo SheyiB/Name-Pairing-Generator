@@ -12,12 +12,14 @@ with open(sys.argv[1], newline='') as csvfile:
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 
+
 class NamesPairGen:
-    def __init__(self, name_list = []):
+    def __init__(self, name_list = [], source = sys.argv[1]):
         self.name_list = name_list
         self.name_pairs = []
         self.list_length = len(name_list)
         self.symetric = False
+        self.source = source
 
     def generate_pairs(self, length):
         if(self.list_length % length != 0):
@@ -55,6 +57,12 @@ class NamesPairGen:
                     result = csv.writer(csvfile, delimiter=' ', quoting=csv.QUOTE_MINIMAL)
                     result.writerow('\n')
             #print(" ")
+
+    def read_CSV(self):
+        with open(self.source, newline='') as csvfile:
+            list_of_names = csv.reader(csvfile, quotechar='|')
+        for row in list_of_names:
+            self.names_list.append(row)
 
 churchBrothers = NamesPairGen(bch_students)
 
