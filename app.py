@@ -41,7 +41,7 @@ class NamesPairGen:
             # print("List not symetric, not all Groups will have equal numbers")
 
 
-    def show_pairs(self):
+    def generate_pair_in_csv_file(self):
         for x in range(len(self.name_pairs)):
             #print("Group ", x+1)
             with open('result.csv', 'a', newline='') as csvfile:
