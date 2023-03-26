@@ -43,12 +43,12 @@ class NamesPairGen:
 
     def generate_pair_in_csv_file(self):
         for x in range(len(self.name_pairs)):
-            #print("Group ", x+1)
+           
             with open('result.csv', 'a', newline='') as csvfile:
                 result = csv.writer(csvfile, delimiter=' ', quoting=csv.QUOTE_MINIMAL)
                 result.writerow(['Group', x+1])
             for y in self.name_pairs[x]:
-               # print(y, end= ' ')
+               
                 with open('result.csv', 'a', newline='') as csvfile:
                     result = csv.writer(csvfile, delimiter=' ',  quoting=csv.QUOTE_MINIMAL)
                     result.writerow(y)
@@ -56,8 +56,15 @@ class NamesPairGen:
             with open('result.csv', 'a', newline='') as csvfile:
                     result = csv.writer(csvfile, delimiter=' ', quoting=csv.QUOTE_MINIMAL)
                     result.writerow('\n')
-            #print(" ")
+            
 
+    def show_pairs(self):
+         for x in range(len(self.name_pairs)):
+            print("Group ", x+1)
+            for y in self.name_pairs[x]:
+                print(y, end= ' ')
+            print(" ")
+            
     def read_CSV(self):
         with open(self.source, newline='') as csvfile:
             list_of_names = csv.reader(csvfile, quotechar='|')
