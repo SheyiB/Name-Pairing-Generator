@@ -4,11 +4,7 @@ import sys
 
 #names of people to be paired
 bch_students = []
-with open(sys.argv[1], newline='') as csvfile:
-    list_of_names = csv.reader(csvfile, quotechar='|')
-    for row in list_of_names:
-        #print(', '.join(row))
-        bch_students.append(row)
+
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 
@@ -68,6 +64,13 @@ class NamesPairGen:
             list_of_names = csv.reader(csvfile, quotechar='|')
         for row in list_of_names:
             self.names_list.append(row)
+
+    def read_csv_to_list(self, csvpath):
+        with open(csvpath, newline='') as csvfile:
+            list_of_names = csv.reader(csvfile, quotechar='|')
+        for row in list_of_names:
+            #print(', '.join(row))
+            self.name_list.append(row)
 
 churchBrothers = NamesPairGen(bch_students)
 
