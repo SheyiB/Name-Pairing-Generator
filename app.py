@@ -40,7 +40,7 @@ class NamesPairGen:
                 self.name_list.remove(name)
             # print("List not symetric, not all Groups will have equal numbers")
 
-    def generate_pair_in_csv_file(self):
+    def output_pairs_in_csv_file(self):
         for x in range(len(self.name_pairs)):
            
             with open('result.csv', 'a', newline='') as csvfile:
