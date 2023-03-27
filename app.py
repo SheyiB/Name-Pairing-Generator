@@ -3,10 +3,7 @@ import csv
 import sys
 
 #names of people to be paired
-bch_students = []
-
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
-
 
 
 class NamesPairGen:
@@ -73,4 +70,4 @@ class NamesPairGen:
             #print(', '.join(row))
             self.name_list.append(row)
 
-churchBrothers = NamesPairGen(bch_students)
+churchBrothers = NamesPairGen()
