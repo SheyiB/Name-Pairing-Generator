@@ -65,7 +65,8 @@ class NamesPairGen:
         for row in list_of_names:
             self.names_list.append(row)
 
-    def read_csv_to_list(self, csvpath):
+    def read_csv_to_list(self):
+        csvpath = input('Enter file path')
         with open(csvpath, newline='') as csvfile:
             list_of_names = csv.reader(csvfile, quotechar='|')
         for row in list_of_names:
