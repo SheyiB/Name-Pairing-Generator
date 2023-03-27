@@ -74,7 +74,3 @@ class NamesPairGen:
             self.name_list.append(row)
 
 churchBrothers = NamesPairGen(bch_students)
-
-churchBrothers.generate_pairs(10)
-
-churchBrothers.show_pairs()
