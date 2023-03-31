@@ -5,6 +5,9 @@ import sys
 #names of people to be paired
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
+def help():
+        print("To generate pairs run `python app.py filename.csv`")
+    
 
 class NamesPairGen:
     def __init__(self, name_list = [], source = sys.argv[1]):
@@ -70,4 +73,12 @@ class NamesPairGen:
             #print(', '.join(row))
             self.name_list.append(row)
 
+    def help():
+        print("To generate pairs run `python app.py filename.csv`")
+
+
+help()
+
 churchBrothers = NamesPairGen()
+
+
