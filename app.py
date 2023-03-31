@@ -20,7 +20,7 @@ class NamesPairGen:
         self.list_length = len(name_list)
         self.symetric = False
         self.source = source
-        self.length = length
+        self.length = int(length)
 
     def generate_pairs(self):
         if(self.list_length % self.length != 0):
@@ -68,8 +68,8 @@ class NamesPairGen:
     def read_CSV(self):
         with open(self.source, newline='') as csvfile:
             list_of_names = csv.reader(csvfile, quotechar='|')
-        for row in list_of_names:
-            self.names_list.append(row)
+            for row in list_of_names:
+                self.name_list.append(row)
 
     def read_csv_to_list(self):
         csvpath = input('Enter file path')
@@ -81,10 +81,13 @@ class NamesPairGen:
 
 #source = sys.argv[1], length = sys.argv[2]
 #!= None and sys.argv[2] != None
-if(len(sys.argv) > 1 ):
-    generation = NamesPairGen()
+if(len(sys.argv) >= 3 ):
+    generation = NamesPairGen(source = sys.argv[1], length = sys.argv[2])
     generation.read_CSV()
     generation.generate_pairs()
     generation.output_pairs_in_csv_file()
+elif(len(sys.argv) > 1):
+    print('One of filename or group length not supplied')
+    help()
 else:
     help()
