@@ -6,7 +6,9 @@ import sys
 names = ["Johny","Frank","Shola","Tolu","Timmy","David","Daniel","John","Matthew","James","Paul", "Jude", "Ralf"]
 
 def help():
-        print("To generate pairs run `python app.py filename.csv`")
+        print("""To generate pairs run `python app.py filename.csv group length` 
+                 e.g `python app.py result.csv 12`   
+                    """)
     
 
 class NamesPairGen:
@@ -52,6 +54,7 @@ class NamesPairGen:
             with open('result.csv', 'a', newline='') as csvfile:
                     result = csv.writer(csvfile, delimiter=' ', quoting=csv.QUOTE_MINIMAL)
                     result.writerow('\n')
+        print("Grouped generated in result.csv")
 
     def show_pairs(self):
          for x in range(len(self.name_pairs)):
@@ -74,15 +77,12 @@ class NamesPairGen:
             #print(', '.join(row))
             self.name_list.append(row)
 
-    def help():
-        print("""To generate pairs run `python app.py filename.csv group length` 
-                 e.g `python app.py result.csv 12`   
-                    """)
 
 
-help()
-
-generation = NamesPairGen()
-generation.read_CSV()
-generation.generate_pairs(sys.argv[2])
-
+if(sys.argv[1] != None and sys.argv[2] != None):
+    generation = NamesPairGen()
+    generation.read_CSV()
+    generation.generate_pairs()
+    generation.output_pairs_in_csv_file()
+else:
+    help()
