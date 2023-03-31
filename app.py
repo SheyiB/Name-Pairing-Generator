@@ -10,20 +10,21 @@ def help():
     
 
 class NamesPairGen:
-    def __init__(self, name_list = [], source = sys.argv[1]):
+    def __init__(self, name_list = [], source = sys.argv[1], length = sys.argv[2]):
         self.name_list = name_list
         self.name_pairs = []
         self.list_length = len(name_list)
         self.symetric = False
         self.source = source
+        self.length = length
 
-    def generate_pairs(self, length):
-        if(self.list_length % length != 0):
+    def generate_pairs(self):
+        if(self.list_length % self.length != 0):
             self.symetric = True
 
-        for x in range(len(self.name_list)//length):
+        for x in range(len(self.name_list)//self.length):
             current_pair = []
-            for i in range(length):
+            for i in range(self.length):
                 name = random.choice(self.name_list)
                 current_pair.append(name)
                 self.name_list.remove(name)
@@ -74,11 +75,14 @@ class NamesPairGen:
             self.name_list.append(row)
 
     def help():
-        print("To generate pairs run `python app.py filename.csv`")
+        print("""To generate pairs run `python app.py filename.csv group length` 
+                 e.g `python app.py result.csv 12`   
+                    """)
 
 
 help()
 
-churchBrothers = NamesPairGen()
-
+generation = NamesPairGen()
+generation.read_CSV()
+generation.generate_pairs(sys.argv[2])
 
