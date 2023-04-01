@@ -10,6 +10,6 @@ An Appp that allows you generate groups based on given names
   e.g
   python3 app.py students.csv 10
 ```
-Check Result.csv for results
+- Check Result.csv for results
 
--CSV File must be in same location as code
+- CSV File must be in same location as code
