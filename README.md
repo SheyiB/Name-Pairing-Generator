@@ -11,3 +11,5 @@ An Appp that allows you generate groups based on given names
   python3 app.py students.csv 10
 ```
 Check Result.csv for results
+
+-CSV File must be in same location as code
